@@ -5,6 +5,7 @@
    "license": "MIT",
    "dependencies": {
       "bcryptjs": "^2.4.3",
+      "build": "^0.1.4",
       "dotenv": "^16.0.3",
       "express": "^4.18.2",
       "express-async-errors": "^3.1.1",
@@ -24,6 +25,10 @@
    },
    "scripts": {
       "typeorm": "typeorm-ts-node-commonjs",
-      "dev": "tsnd --ignore-watch node_modules --rs --cls src/server.ts"
+      "dev": "tsnd --ignore-watch node_modules --rs --cls src/server.ts",
+      "typeorm:generate": "typeorm-ts-node-commonjs migration:generate -d src/data-source",
+      "typeorm:run": "typeorm-ts-node-commonjs migration:run -d src/data-source",
+      "build": "tsc",
+      "start": "node dist/server.js"
    }
 }
